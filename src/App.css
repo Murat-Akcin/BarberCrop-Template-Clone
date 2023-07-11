@@ -2,37 +2,93 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-color: #202020;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.renkyazi {
+  color: #a0a0a0;
+}
+
+#scrolling-text-container {
+  overflow: hidden;
+  position: relative;
+  height: 50px; /* Ayarlamak istediğiniz yüksekliği burada belirleyebilirsiniz */
+  cursor: grab;
+}
+
+#scrolling-text {
+  position: absolute;
+  white-space: nowrap;
+  animation: scroll-text 10s linear infinite;
+  color: red;
+}
+
+@keyframes scroll-text {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.back {
+  position: relative;
+  height: 100%;
+}
+
+.about-1 {
+  background-image: url('./pages/About/aboutImages/b1.jpg');
+  color: red;
+
+  background-size: 100%;
+}
+
+.background-slider {
+  overflow: hidden;
+}
+
+.slider-wrapper {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  transition: transform 0.5s ease;
+  height: 900px;
+  opacity: 0.4;
 }
 
-.App-link {
-  color: #61dafb;
+.slider-image {
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.slider-image.active {
+  opacity: 1;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: translateX(0);
   }
+}
+
+.slide-in-text {
+  animation: slideIn 3s ease-out;
+}
+
+.orta {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)),
+    url('./pages//homePage//HomepageImages/bb1.jpg');
+  background-size: cover;
+}
+
+.resimlerr {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  display: block;
 }

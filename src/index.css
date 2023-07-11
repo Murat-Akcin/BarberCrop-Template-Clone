@@ -1,13 +1,140 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes slide {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  /** --------------------------NAVBAR---------------------------------------------------------------------*/
+  .nav {
+    @apply flex  bg-navcolor text-white h-20;
+  }
+
+  .navl {
+    @apply flex ml-48 items-center;
+  }
+
+  .navr {
+    @apply flex ml-60 space-x-8 items-center font-bold;
+  }
+
+  .nav-btn {
+    @apply flex bg-navbtncolor h-12 w-28 items-center justify-center ml-24 cursor-pointer hover:bg-slate-800;
+  }
+  /** --------------------------FOOTER---------------------------------------------------------------------*/
+  .footer {
+    @apply grid grid-cols-3 bg-footercolor text-white p-4 h-96 w-screen bg-gradient-to-t from-footercolor to-gray-900;
+  }
+
+  .footer-logo {
+    @apply flex items-center justify-center;
+  }
+
+  .footer-middle {
+    @apply justify-center font-semibold flex flex-col;
+  }
+  .footer-middle-top {
+    @apply flex font-extrabold mb-5 items-start justify-start space-x-5 text-2xl;
+  }
+
+  .footer-middle-middle {
+    @apply text-footertextcolor;
+  }
+
+  .footer-icons {
+    @apply flex space-x-4 mb-5 mt-5 justify-start items-start;
+  }
+
+  .footer-icons-facebook {
+    @apply hover:bg-white rounded-full hover:text-black border-white;
+  }
+
+  .footer-icons-twitter {
+    @apply hover:bg-white rounded-full hover:text-black border-white;
+  }
+
+  .footer-icons-youtube {
+    @apply hover:bg-white rounded-full hover:text-black border-white;
+  }
+
+  .footer-bottom {
+    @apply flex flex-col items-start justify-center;
+  }
+
+  .footer-bottom-top {
+    @apply font-extrabold text-2xl mb-5;
+  }
+
+  .footer-bottom-middle {
+    @apply text-footertextcolor mb-5;
+  }
+
+  .footer-bottom-button {
+    @apply bg-navbtncolor h-14 w-24 font-bold hover:bg-gray-800;
+  }
+  .footer-input {
+    @apply h-14 w-72 text-black;
+  }
+
+  /*?-------------------------------------------------------------------------CONTACTS----------------------*/
+
+  .contacts-top-p {
+    @apply text-white font-bold  text-4xl;
+  }
+
+  .contacts-middle {
+    @apply flex;
+  }
+
+  .contacts-middle-1 {
+    @apply w-1/3;
+  }
+
+  .contacts-middle-2 {
+    @apply w-1/3;
+  }
+  .contacts-middle-3 {
+    @apply w-1/3;
+  }
+
+  .contacts-middle-1-titles {
+    @apply text-2xl;
+  }
+
+  .contacts-bottom {
+    @apply justify-start items-center flex flex-col;
+  }
+
+  /**----------------------BLOG-SİNGLEPOST---------------------------------------------------------------------- */
+
+  .blog {
+    @apply flex text-white;
+  }
+
+  /* -----------------------------------404--------------------------------------------------------------------------------  */
+
+  .notfound {
+    @apply grid-rows-2 text-white;
+  }
+
+  .notfound-left {
+    @apply w-1/5 bg-green-600 flex-col;
+  }
+
+  .notfound-right {
+    @apply w-4/5;
+  }
 }
